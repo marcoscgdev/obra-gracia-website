@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra Gracia | Jardinería, Albañilería y Reformas en Cuarte de Huerva</title>
+    <meta name="description" content="Obra Gracia - Especialistas en jardinería, poda, desbroce, césped artificial, albañilería y obras menores en Cuarte de Huerva y Zaragoza. Pide tu presupuesto sin compromiso.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#DC2626',
+                            redDark: '#B91C1C',
+                            yellow: '#F59E0B',
+                            green: '#16A34A',
+                            greenDark: '#15803D',
+                            dark: '#0F172A',
+                            grayLight: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03)',
+                        'brand': '0 10px 25px -5px rgba(220, 38, 38, 0.25)',
+                        'green': '0 10px 25px -5px rgba(22, 163, 74, 0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1E293B;
+        }
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: #FFFFFF;
+            z-index: 20;
+            cursor: ew-resize;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #DC2626;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800 bg-slate-50 flex flex-col min-h-screen pb-16 md:pb-0">
+
+    <div class="bg-slate-900 text-white text-xs md:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-slate-300">
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-brand-red"></i>
+                    Cuarte de Huerva y Zaragoza
+                </span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:flex items-center gap-1.5 text-slate-300">
+                    <i class="fa-solid fa-clock text-brand-yellow"></i>
+                    Atención: Lun - Sáb (8:00 - 20:00)
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/obra.gracia" target="_blank" rel="noopener" class="hover:text-brand-yellow transition-colors flex items-center gap-1 text-slate-300">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span class="hidden sm:inline">@obra.gracia</span>
+                </a>
+                <a href="tel:611582607" class="font-bold text-white hover:text-brand-yellow transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-brand-green"></i>
+                    611 58 26 07
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo Component -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center justify-center w-14 h-14 rounded-xl bg-white text-black shadow-md group-hover:scale-105 transition-transform">
+                        <img src="img/logo-og.png" alt="Obra Gracia Logo">    
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-1">
+                            <span class="text-2xl font-black tracking-tight text-slate-900 font-sans">OBRA</span>
+                            <span class="text-2xl font-black tracking-tight text-emerald-600">GRACIA</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs font-bold text-slate-600 tracking-wider uppercase">
+                            <span class="text-brand-green font-extrabold"><i class="fa-solid fa-leaf text-[10px] mr-0.5"></i>Jardinería</span>
+                            <span>&</span>
+                            <span class="text-brand-red"><i class="fa-solid fa-hammer text-[10px] mr-0.5"></i>Albañilería</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-slate-700">
+                    <a href="#inicio" class="hover:text-brand-red transition-colors py-2 text-sm uppercase tracking-wider font-semibold">Inicio</a>
+                    <a href="#servicios" class="hover:text-brand-red transition-colors py-2 text-sm uppercase tracking-wider font-semibold">Servicios</a>
+                    <a href="#proyectos" class="hover:text-brand-red transition-colors py-2 text-sm uppercase tracking-wider font-semibold">Antes / Después</a>
+                    <a href="#presupuesto" class="hover:text-brand-red transition-colors py-2 text-sm uppercase tracking-wider font-semibold">Presupuesto</a>
+                    <a href="#contacto" class="hover:text-brand-red transition-colors py-2 text-sm uppercase tracking-wider font-semibold">Contacto</a>
+                </nav>
+
+                <!-- Quick Action Header Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/34611582607?text=Hola%20Obra%20Gracia,%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20sin%20compromiso." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-all shadow-green hover:shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Directo</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Abrir Menú">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" class="mobile-link block px-4 py-3 rounded-lg text-slate-800 font-semibold hover:bg-slate-100">Inicio</a>
+            <a href="#servicios" class="mobile-link block px-4 py-3 rounded-lg text-slate-800 font-semibold hover:bg-slate-100">Servicios Integrales</a>
+            <a href="#proyectos" class="mobile-link block px-4 py-3 rounded-lg text-slate-800 font-semibold hover:bg-slate-100">Galería de Trabajos</a>
+            <a href="#presupuesto" class="mobile-link block px-4 py-3 rounded-lg text-slate-800 font-semibold hover:bg-slate-100">Presupuesto Sin Compromiso</a>
+            <a href="#contacto" class="mobile-link block px-4 py-3 rounded-lg text-slate-800 font-semibold hover:bg-slate-100">Contacto Directo</a>
+            
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+                <a href="tel:611582607" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 text-white font-bold">
+                    <i class="fa-solid fa-phone text-brand-yellow"></i>
+                    Llamar: 611 58 26 07
+                </a>
+                <a href="https://wa.me/34611582607" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-bold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    WhatsApp Inmediato
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative overflow-hidden bg-slate-50 border-b border-slate-200 py-12 md:py-20 lg:py-24 bg-grid-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Location Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs sm:text-sm font-semibold shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        <span>Cuarte de Huerva, Zaragoza y Alrededores</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                        Especialistas en <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-emerald-600 via-amber-500 to-red-600 bg-clip-text text-transparent">
+                            Jardinería & Albañilería
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        En <strong class="text-slate-900 font-semibold">Obra Gracia</strong> cuidamos y transformamos tus espacios exteriores e interiores. Somos especialistas en <strong class="text-emerald-700">poda, desbroce, limpiezas y césped artificial</strong>, así como en <strong class="text-red-700">obras menores, suelos de exterior, alisado de paredes y reparación de fachadas</strong>.
+                    </p>
+
+                    <!-- Key highlights badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-700">
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                            <span>Garantía de Acabado</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-bolt text-amber-500"></i>
+                            <span>Presupuestos Rápidos</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-handshake text-red-600"></i>
+                            <span>Trato Cercano y Directo</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#presupuesto" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-lg hover:-translate-y-0.5 text-base">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Pedir Presupuesto Gratis</span>
+                        </a>
+                        <a href="tel:611582607" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-slate-800 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300/80 transition-all text-base">
+                            <i class="fa-solid fa-phone text-emerald-700 text-lg"></i>
+                            <span>Llamar Directamente</span>
+                        </a>
+                    </div>
+
+                    <!-- Direct Call Info -->
+                    <div class="pt-2 flex items-center justify-center lg:justify-start gap-3 text-sm text-slate-600">
+                        <i class="fa-solid fa-phone text-slate-400"></i>
+                        <span>¿Prefieres llamar en otro momento?</span>
+                        <a href="tel:611582607" class="font-extrabold text-slate-900 hover:text-brand-red transition-colors underline underline-offset-4 decoration-brand-red">
+                            611 58 26 07
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-slate-200 space-y-3">
+                        <div class="relative h-64 sm:h-72 rounded-xl overflow-hidden shadow-inner group">
+                            <img src="img/cesped_art.jpg" alt="Jardinería, césped y exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-4">
+                                <span class="bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow">
+                                    <i class="fa-solid fa-leaf mr-1"></i> Jardinería & Exteriores
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="relative h-36 rounded-xl overflow-hidden shadow-inner group">
+                                <img src="img/local_despues.jpg" alt="Suelos de exterior y terrazas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3">
+                                    <span class="bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
+                                        <i class="fa-solid fa-layer-group mr-1"></i> Suelos
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative h-36 rounded-xl overflow-hidden shadow-inner group">
+                                <img src="img/reforma.jpg" alt="Albañilería y obras menores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3">
+                                    <span class="bg-red-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
+                                        <i class="fa-solid fa-hammer mr-1"></i> Albañilería
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-4 rounded-xl shadow-2xl border border-slate-800 hidden sm:flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-slate-900 text-xl font-black">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase text-slate-400">Ubicación principal</p>
+                                <p class="text-sm font-extrabold text-white">Cuarte de Huerva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-16 md:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                    Nuestras Especialidades
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">
+                    Servicios Profesionalizados de Jardinería y Albañilería
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Un único equipo de confianza para el cuidado de tus zonas verdes y los trabajos de reforma en tu vivienda o parcela.
+                </p>
+            </div>
+
+            <!-- Services Grid Split into Two Core Pillars -->
+            <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Pillar 1: Jardinería (PRIMARY FOCUS) -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full -z-0"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Especialidad Principal</span>
+                            <h3 class="text-2xl font-black text-slate-900">Jardinería y Mantenimiento</h3>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Mantenemos y transformamos tus espacios verdes en Cuarte de Huerva y provincia, ofreciendo un servicio rápido, limpio y adaptado a tus necesidades.
+                    </p>
+
+                    <ul class="space-y-3 font-medium text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span><strong>Poda:</strong> Poda de árboles, arbustos, recortes de setos y mantenimiento vegetal estacional.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span><strong>Desbroce:</strong> Desbrozado de matorrales, malas hierbas y acondicionamiento de terrenos y fincas.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span><strong>Limpiezas:</strong> Limpieza integral de jardines, retirada de restos vegetales, hojas y puestas a punto.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span><strong>Césped Artificial:</strong> Suministro e instalación profesional de césped artificial de alta resistencia y gran realismo.</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Mantenimiento particular y parcelas</span>
+                        <a href="https://wa.me/34611582607?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20servicios%20de%20Jardiner%C3%ADa" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 hover:underline">
+                            Consultar Jardinería <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Albañilería -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full -z-0"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-red">Especialidad #2</span>
+                            <h3 class="text-2xl font-black text-slate-900">Albañilería y Reformas</h3>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Trabajos de albañilería y acondicionamiento interior y exterior ejecutados con materiales de máxima resistencia y acabados cuidados.
+                    </p>
+
+                    <ul class="space-y-3 font-medium text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-red mt-1"></i>
+                            <span><strong>Obras Menores:</strong> Tabiquería, reformas puntuales, alicatados y pequeños trabajos de construcción.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-red mt-1"></i>
+                            <span><strong>Suelos de Exterior:</strong> Colocación de baldosas de exterior, gres porcelánico, soleras y terrazas.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-red mt-1"></i>
+                            <span><strong>Alisado de Paredes:</strong> Enlucido de paredes, retirada de gotelé y preparación de superficies para pintar.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-red mt-1"></i>
+                            <span><strong>Reparación de Fachadas:</strong> Arreglo de grietas, desconchones, lucido de mortero y saneamiento exterior.</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Presupuestos a medida sin compromiso</span>
+                        <a href="https://wa.me/34611582607?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20trabajos%20de%20Alba%C3%B1iler%C3%ADa" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-red hover:underline">
+                            Consultar Albañilería <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-16 md:py-24 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-brand-yellow font-bold text-xs uppercase tracking-widest bg-amber-100/80 text-amber-900 px-3 py-1 rounded-full border border-amber-200">
+                    Resultados Reales
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">
+                    Desliza para Ver la Transformación
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Mira la diferencia de nuestros acabados en trabajos de reformas de terrazas y acondicionamiento de jardines.
+                </p>
+            </div>
+
+            <!-- Comparison Sliders Grid -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Comparison Box 1: Jardín & Terraza -->
+                <div class="bg-white rounded-2xl p-4 shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>Transformación de Terraza & Césped</span>
+                        <span class="text-xs bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md font-semibold">Jardinería</span>
+                    </h3>
+                    <div class="before-after-container h-88 sm:h-96 rounded-xl" id="slider-1">
+                        <!-- After Image (Background) -->
+                        <img src="img/cesped_art.jpg" alt="Jardín Reformado Después" class="w-full h-full object-cover">
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-white text-xs font-bold px-2.5 py-1 rounded z-0 backdrop-blur-sm">DESPUÉS</span>
+                        
+                        <!-- Before Image (Overlay clipped) -->
+                        <div class="before-image" id="before-1">
+                            <img src="img/terreno_antes.jpg" alt="Jardín Antes" class="h-full object-cover max-w-none" id="before-img-1">
+                            <span class="absolute bottom-3 left-3 bg-red-600/90 text-white text-xs font-bold px-2.5 py-1 rounded z-20 backdrop-blur-sm">ANTES</span>
+                        </div>
+                        
+                        <!-- Drag Handle -->
+                        <div class="slider-handle" id="handle-1">
+                            <div class="slider-button">
+                                <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        <i class="fa-solid fa-hand-pointer text-slate-400 mr-1"></i> Arrastra la barra central para comparar el cambio
+                    </p>
+                </div>
+
+                <!-- Comparison Box 2: Reforma Local / Albañilería -->
+                <div class="bg-white rounded-2xl p-4 shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>Reforma de Local</span>
+                        <span class="text-xs bg-red-100 text-red-800 px-2.5 py-1 rounded-md font-semibold">Albañilería</span>
+                    </h3>
+                    <div class="before-after-container h-88 sm:h-96 rounded-xl" id="slider-2">
+                        <!-- After Image -->
+                        <img src="img/local_despues.jpg" alt="Local Reformado Después" class="w-full h-full object-cover">
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-white text-xs font-bold px-2.5 py-1 rounded z-0 backdrop-blur-sm">DESPUÉS</span>
+                        
+                        <!-- Before Image -->
+                        <div class="before-image" id="before-2">
+                            <img src="img/local_antes.jpg" alt="Local Antes" class="h-full object-cover max-w-none" id="before-img-2">
+                            <span class="absolute bottom-3 left-3 bg-red-600/90 text-white text-xs font-bold px-2.5 py-1 rounded z-20 backdrop-blur-sm">ANTES</span>
+                        </div>
+                        
+                        <!-- Drag Handle -->
+                        <div class="slider-handle" id="handle-2">
+                            <div class="slider-button">
+                                <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        <i class="fa-solid fa-hand-pointer text-slate-400 mr-1"></i> Arrastra la barra central para comparar el cambio
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Instagram Feed Callout -->
+            <div class="mt-12 text-center bg-white border border-slate-200 p-6 rounded-2xl max-w-xl mx-auto shadow-sm">
+                <div class="flex items-center justify-center gap-3 mb-2 text-slate-900">
+                    <i class="fa-brands fa-instagram text-2xl text-pink-600"></i>
+                    <span class="font-black text-lg">¿Quieres ver más fotos de nuestros trabajos?</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-4">Síguenos en nuestra cuenta oficial de Instagram donde subimos publicaciones de proyectos día a día.</p>
+                <a href="https://www.instagram.com/obra.gracia" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white font-bold text-sm shadow hover:opacity-95 transition-opacity">
+                    <span>Visitar Instagram @obra.gracia</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="presupuesto" class="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-4 max-w-3xl mx-auto">
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20 inline-block">
+                    <i class="fa-solid fa-bolt text-amber-400 mr-1.5"></i> Respuesta rápida por WhatsApp
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+                    Solicita tu Presupuesto Gratis y Sin Compromiso
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Escríbenos directamente contándonos tu idea. Te asesoramos sobre opciones, materiales y coordinamos una visita técnica en <strong class="text-white">Cuarte de Huerva o Zaragoza</strong> sin coste alguno.
+                </p>
+            </div>
+
+            <!-- Steps for requesting budget -->
+            <div class="mt-10 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 sm:p-10 backdrop-blur-sm shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700/70 text-center relative group hover:border-emerald-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-black text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            1
+                        </div>
+                        <h3 class="font-bold text-white text-base mb-1">Escríbenos por WhatsApp</h3>
+                        <p class="text-xs text-slate-400">Pulsa el botón e inicia un chat directo con nosotros en un solo toque.</p>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700/70 text-center relative group hover:border-amber-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-black text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            2
+                        </div>
+                        <h3 class="font-bold text-white text-base mb-1">Cuéntanos tu proyecto</h3>
+                        <p class="text-xs text-slate-400">Envíanos una foto, medidas o explícanos qué reforma o trabajo de jardín quieres realizar.</p>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700/70 text-center relative group hover:border-red-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-red-500/20 text-brand-red font-black text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            3
+                        </div>
+                        <h3 class="font-bold text-white text-base mb-1">Recibe tu valoración</h3>
+                        <p class="text-xs text-slate-400">Te asesoramos sin compromiso y si lo necesitas agendamos una visita a tu parcela o casa.</p>
+                    </div>
+                </div>
+
+                <!-- Main Direct WhatsApp CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/34611582607?text=Hola%20Obra%20Gracia,%20me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20sin%20compromiso%20para%20un%20trabajo." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-all shadow-green hover:shadow-lg hover:-translate-y-0.5 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Pedir Presupuesto por WhatsApp</span>
+                    </a>
+                    <a href="tel:611582607" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/80 transition-all hover:-translate-y-0.5 text-base">
+                        <i class="fa-solid fa-phone text-amber-400 text-lg"></i>
+                        <span>Llamar: 611 58 26 07</span>
+                    </a>
+                </div>
+
+                <!-- Guarantee Highlights Bar -->
+                <div class="mt-8 pt-6 border-t border-slate-700/50 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-xs text-slate-300">
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Atención directa y cercana</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Visita y valoración sin coste</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Sin ningún tipo de compromiso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-green font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                        Cobertura Local
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">
+                        Trabajamos en Cuarte de Huerva y Toda la Provincia
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Nuestra base se encuentra en <strong class="text-slate-900">Cuarte de Huerva</strong>, lo que nos permite ofrecer una respuesta rápida, visitas de medición directas y sin sobrecostes por desplazamiento en toda la zona sur de Zaragoza.
+                    </p>
+
+                    <!-- Towns List -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-brand-red"></i>
+                            <span>Cuarte de Huerva</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            <span>Cadrete</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            <span>María de Huerva</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            <span>Montecanal</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            <span>Rosales del Canal</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-slate-800 bg-white p-2.5 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-location-dot text-slate-400"></i>
+                            <span>Zaragoza Centro</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info text-amber-600 text-lg mt-0.5"></i>
+                        <span>¿Tu obra o jardín está fuera de estas localidades? Consúltanos sin compromiso, nos encantaría valorarlo.</span>
+                    </div>
+                </div>
+
+                <!-- Local Guarantee Card -->
+                <div class="lg:col-span-6 bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">
+                        ¿Por qué los vecinos confían en Obra Gracia?
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-100 text-brand-red flex-shrink-0 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Seriedad y Cumplimiento de Plazos</h4>
+                                <p class="text-sm text-slate-600">Comenzamos y terminamos en la fecha pactada, dejando todo limpio tras finalizar.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex-shrink-0 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-euro-sign"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Presupuesto Cerrado Sin Sorpresas</h4>
+                                <p class="text-sm text-slate-600">Detallamos mano de obra y materiales para que conozcas exactamente lo que vas a pagar.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex-shrink-0 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Servicio Unificado (Reforma + Exterior)</h4>
+                                <p class="text-sm text-slate-600">No necesitas contratar a dos empresas distintas para tu casa y tu terraza o parcela.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <span class="text-brand-red font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100">
+                    Dudas Frecuentes
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">
+                    Preguntas Habituales
+                </h2>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="max-w-3xl mx-auto space-y-4">
+                
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors">
+                        <span>¿El presupuesto es realmente sin compromiso?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        Sí, totalmente. Nos desplazamos a tu vivienda o parcela en Cuarte de Huerva o alrededores, tomamos medidas, evaluamos los materiales necesarios y te preparamos una propuesta detallada sin ningún coste.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors">
+                        <span>¿Podéis encargaros del suministro de materiales?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        Por supuesto. Asesoramos en la elección de azulejos, césped artificial, morteros, tuberías de riego y piedras decorativas. También trabajamos con materiales proporcionados directamente por el cliente si así lo prefieres.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors">
+                        <span>¿Ofrecéis mantenimiento periódico de jardines?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        Sí, realizamos tanto intervenciones puntuales (poda estacional, puesta a punto de primavera/verano, instalación de riego) como mantenimientos periódicos mensuales para chalets, particulares y comunidades.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors">
+                        <span>¿Cómo contacto de la manera más rápida?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        Lo más rápido es enviarnos un mensaje por WhatsApp al <strong>611 58 26 07</strong> con unas fotos o descripción breve de lo que deseas hacer. Te responderemos en cuestión de minutos.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 md:py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-yellow font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                            Contacto Directo
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+                            Hablemos de Tu Proyecto
+                        </h2>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2">
+                            Pide información o solicita visita técnica para medir y valorar tus obras o reformas sin compromiso.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts Cards -->
+                    <div class="space-y-4">
+                        
+                        <a href="tel:611582607" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-brand-red transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-red-600/20 text-brand-red flex items-center justify-center text-xl group-hover:bg-red-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Teléfono / Llamadas</span>
+                                <span class="text-xl font-extrabold text-white">611 58 26 07</span>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/34611582607?text=Hola%20Obra%20Gracia,%20quiero%20solicitar%20un%20presupuesto" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">WhatsApp Inmediato</span>
+                                <span class="text-xl font-extrabold text-emerald-400">Enviar Mensaje</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@obragracia.es" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-amber-400 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Correo Electrónico</span>
+                                <span class="text-base font-bold text-white">info@obragracia.es</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/obra.gracia" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-pink-500 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-pink-600/20 text-pink-400 flex items-center justify-center text-xl group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Instagram</span>
+                                <span class="text-base font-bold text-white">@obra.gracia</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Email Contact Right Column -->
+                <div class="lg:col-span-7 bg-slate-800/50 border border-slate-700 p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-3.5 py-1.5 rounded-full border border-amber-400/20 inline-block mb-4">
+                            <i class="fa-solid fa-envelope mr-1.5"></i> Vía de Contacto Directa
+                        </span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Escríbenos a Nuestro Correo</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                            Si prefieres realizarnos una consulta por escrito, enviarnos planos de tu vivienda o coordinar un proyecto detallado, escríbenos directamente a nuestro email oficial.
+                        </p>
+
+                        <!-- Highlighted Email Card -->
+                        <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-red-600/20 text-brand-red flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fa-solid fa-at"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider">Email de Contacto</span>
+                                    <a href="mailto:info@obragracia.es" class="text-lg sm:text-xl font-extrabold text-white hover:text-brand-yellow transition-colors break-all">
+                                        info@obragracia.es
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="mailto:info@obragracia.es" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-white bg-red-600 hover:bg-red-700 transition-all text-sm flex-shrink-0 shadow-md">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                <span>Enviar Correo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info Box -->
+                    <div class="bg-slate-900/60 border border-slate-700/60 p-5 rounded-xl space-y-2">
+                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-amber-400"></i>
+                            <span>Atención y Tiempos de Respuesta</span>
+                        </h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Atendemos las consultas recibidas por email habitualmente en un plazo máximo de 24 horas laborables. Para consultas urgentes o presupuestos inmediatos, te recomendamos contactarnos directamente por <strong class="text-emerald-400">WhatsApp</strong> o <strong class="text-white">llamada telefónica</strong>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-white text-black flex items-center justify-center font-bold text-sm">
+                    <img src="img/logo-og.png" alt="Obra Gracia Logo">
+                </div>
+                <div>
+                    <span class="text-lg font-black text-white tracking-tight">OBRA GRACIA</span>
+                    <p class="text-xs text-slate-500">Jardinería y Albañilería en Cuarte de Huerva</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-slate-400">
+                <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+                <a href="#presupuesto" class="hover:text-white transition-colors">Presupuesto</a>
+                <a href="mailto:info@obragracia.es" class="hover:text-amber-400 transition-colors">info@obragracia.es</a>
+            </div>
+
+            <div class="text-xs text-slate-500 text-center sm:text-right">
+                © <span id="current-year">2026</span> Obra Gracia. Todos los derechos reservados.<br>
+                <span>Teléfono: 611 58 26 07 | info@obragracia.es</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Call/WhatsApp Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 p-2 sm:hidden flex gap-2 shadow-2xl">
+        <a href="tel:611582607" class="flex-1 py-3 bg-slate-900 text-white font-bold rounded-xl flex items-center justify-center gap-2 text-sm">
+            <i class="fa-solid fa-phone text-brand-yellow"></i>
+            Llamar
+        </a>
+        <a href="https://wa.me/34611582607?text=Hola%20Obra%20Gracia,%20solicito%20presupuesto" target="_blank" class="flex-1 py-3 bg-emerald-600 text-white font-bold rounded-xl flex items-center justify-center gap-2 text-sm shadow-green">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            WhatsApp
+        </a>
+    </div>
+
+    <script>
+        // Set dynamic year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.className = 'fa-solid fa-bars text-xl';
+                } else {
+                    menuIcon.className = 'fa-solid fa-xmark text-xl';
+                }
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fa-solid fa-bars text-xl';
+                });
+            });
+        }
+
+        // Before & After Sliders Interactive Drag Script
+        function setupSlider(sliderId, beforeId, handleId) {
+            const slider = document.getElementById(sliderId);
+            const before = document.getElementById(beforeId);
+            const handle = document.getElementById(handleId);
+
+            if (!slider || !before || !handle) return;
+
+            let isDragging = false;
+
+            const updatePos = (x) => {
+                const rect = slider.getBoundingClientRect();
+                let offsetX = x - rect.left;
+                if (offsetX < 0) offsetX = 0;
+                if (offsetX > rect.width) offsetX = rect.width;
+                const percentage = (offsetX / rect.width) * 100;
+                before.style.width = percentage + '%';
+                handle.style.left = percentage + '%';
+            };
+
+            const startDrag = (e) => {
+                isDragging = true;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                updatePos(clientX);
+            };
+
+            const stopDrag = () => { isDragging = false; };
+
+            const moveDrag = (e) => {
+                if (!isDragging) return;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                updatePos(clientX);
+            };
+
+            slider.addEventListener('mousedown', startDrag);
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('mousemove', moveDrag);
+
+            slider.addEventListener('touchstart', startDrag);
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('touchmove', moveDrag);
+        }
+
+        setupSlider('slider-1', 'before-1', 'handle-1');
+        setupSlider('slider-2', 'before-2', 'handle-2');
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
